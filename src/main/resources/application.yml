@@ -1,0 +1,43 @@
+# H2
+#spring:
+#  # Datasource
+#  datasource:
+#    url: jdbc:h2:mem:~/test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+
+
+#DIRETORIOS
+file:
+  directory:
+    out: /tmp/output/
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: postgres
+    platform: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    database: POSTGRESQL
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+
+    open-in-view: false
+
+  sql:
+    init:
+      mode: always
+  #spring:jpa:hibernate:ddl-auto=create
+
+  #CONFIGURACOES SPRING BATCH
+  batch:
+    job:
+      enabled: true
+    initialize-schema: always
+
+
